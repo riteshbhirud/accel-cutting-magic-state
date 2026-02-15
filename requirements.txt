@@ -1,0 +1,7 @@
+bloqade-tsim==0.1.0
+stim
+jax
+jaxlib
+numpy
+equinox
+pyzx_param==0.9.2
