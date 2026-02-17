@@ -60,6 +60,31 @@ All benchmarks on Apple M4 Pro, batch size 2M. Throughput is total shots / wall-
 | 0.002 | 1,580,499 | 0.424 | 0.999993 |
 | 0.005 | 592,605 | 0.118 | 0.999902 |
 
+## Attribution
+
+If you wish to cite this in an academic work, please cite the [accompanying paper](https://arxiv.org/abs/2509.08658):
+<pre>
+  @misc{wan2026simulatingmagicstatecultivation,
+      title={Simulating magic state cultivation with few Clifford terms}, 
+      author={Kwok Ho Wan and Zhenghao Zhong},
+      year={2026},
+      eprint={2509.08658},
+      archivePrefix={arXiv},
+      primaryClass={quant-ph},
+      url={https://arxiv.org/abs/2509.08658}, 
+}
+</pre>
+and or this repository:
+<pre>
+@software{Wan2026accel,
+  title={Accelerated Exact Sampling for Magic State Cultivation},
+  author={Wan, Kwok Ho and Zhong, Zhenghao and ., Ainhoa},
+  url={https://github.com/kh428/accel-cutting-magic-state},
+  year={2026},
+  note = {Apache-2.0 License},
+}
+</pre>
+  
 ## Acknowledgements
 
 Parts of this codebase were developed with the assistance of LLMs.
