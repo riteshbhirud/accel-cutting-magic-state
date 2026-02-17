@@ -2,7 +2,7 @@
 
 Companion code for "Simulating magic state cultivation with few Clifford terms (arXiv:2509.08658)".
 
-An optimised sampling pipeline for the $d=3$ T-gate magic state cultivation circuit, built on top of [`bloqade-tsim==0.1.0`](https://github.com/QuEraComputing/bloqade-tsim). Achieves >4 million exact (non-Clifford) shots per second at low noise ($p \leq 5 \times 10^{-4}$) on an Apple M4 Macbook Pro laptop, within ~1.1x of a fully Clifford proxy via `stim`.
+An optimised sampling pipeline for the $d=3$ T-gate magic state cultivation circuit, built on top of [`bloqade-tsim==0.1.0`](https://github.com/QuEraComputing/tsim). Achieves >4 million exact (non-Clifford) shots per second at low noise ($p \leq 5 \times 10^{-4}$) on an Apple M4 Macbook Pro laptop, within ~1.1x of a fully Clifford proxy via `stim`.
 
 ## Optimisations
 
