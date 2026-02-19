@@ -64,7 +64,7 @@ All benchmarks on Apple M4 Pro, batch size 2M. Throughput is total shots / wall-
 
 If you wish to cite this in an academic work, please cite the [accompanying paper](https://arxiv.org/abs/2509.08658):
 <pre>
-  @misc{wan2026simulatingmagicstatecultivation,
+@misc{wan2026simulatingmagicstatecultivation,
       title={Simulating magic state cultivation with few Clifford terms}, 
       author={Kwok Ho Wan and Zhenghao Zhong},
       year={2026},
