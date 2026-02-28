@@ -1,0 +1,15 @@
+[
+  {
+    "noise_strength": 0.001,
+    "logical_error_rate": 0.014084507042253521,
+    "ci_lower": 0.0024905391347781955,
+    "ci_upper": 0.07556230847938292,
+    "num_surviving": 71,
+    "total_sampled": 22535,
+    "proj_survival_rate": 0.45489238961615264,
+    "working_survival_rate": 0.355,
+    "overall_survival_rate": 0.003150654537386288,
+    "compile_time": 1.7127749919891357,
+    "sample_time": 258.0642192363739
+  }
+]
