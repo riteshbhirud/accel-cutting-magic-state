@@ -2,14 +2,15 @@ import sys
 import os
 os.environ["JAX_PLATFORMS"] = "cpu"
 
-sys.path.insert(0, '/Users/ritesh/Downloads/prx/accel-cutting-magic-state')
-sys.path.insert(0, '/Users/ritesh/Downloads/prx/tsim/src')
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(_PRX_ROOT, 'tsim', 'src'))
 
 import subprocess
+_PRX_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 
 # Find any cached/compiled output files
 result = subprocess.run(
-    ['find', '/Users/ritesh/Downloads/prx/', '-name', '*.pkl', '-o', '-name', '*.npz', '-o', '-name', '*.json'],
+    ['find', _PRX_ROOT, '-name', '*.pkl', '-o', '-name', '*.npz', '-o', '-name', '*.json'],
     capture_output=True, text=True
 )
 print("Cached files found:")
@@ -20,7 +21,7 @@ print("\n" + "="*60)
 print("find_stab_cutting signature and docstring:")
 print("="*60)
 
-with open('/Users/ritesh/Downloads/prx/accel-cutting-magic-state/tsim_cutting.py') as f:
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tsim_cutting.py') as f:
     lines = f.readlines()
 
 # Find find_stab_cutting definition and print surrounding lines

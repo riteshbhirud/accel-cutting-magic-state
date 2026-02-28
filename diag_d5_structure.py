@@ -24,7 +24,7 @@ from stab_rank_cut import tcount, decompose as stab_rank_decompose
 # ============================================================================
 # Load d=5 circuit
 # ============================================================================
-CIRCUIT_PATH = "/Users/ritesh/Downloads/prx/gidney-circuits/circuits/" \
+CIRCUIT_PATH = os.path.join(_PRX_ROOT, "gidney-circuits", "circuits", \
     "for_perfectionist_decoding/" \
     "c=inject[unitary]+cultivate,p=0.001,noise=uniform," \
     "g=css,q=42,b=Y,r=10,d1=5.stim"
@@ -191,6 +191,8 @@ try:
 except Exception as e:
     print(f"  Compilation failed: {e}")
     import traceback
+import os
+_PRX_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
     traceback.print_exc()
 
 print("\nDone.")

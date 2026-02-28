@@ -9,6 +9,8 @@ import sys, os, re
 from pathlib import Path
 import numpy as np
 from collections import Counter, defaultdict
+import os
+_PRX_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 
 os.environ["JAX_PLATFORMS"] = "cpu"
 
@@ -313,7 +315,7 @@ def sample_outcomes(circuit_text, n_qubits, n_samples=100):
 # ============================================================================
 # Load d=3 circuit
 # ============================================================================
-D3_PATH = Path("/Users/ritesh/Downloads/prx/gidney-circuits/circuits/"
+D3_PATH = Path(os.path.join(_PRX_ROOT, "gidney-circuits", "circuits", ""
                "for_perfectionist_decoding/"
                "c=inject[unitary]+cultivate,p=0.001,noise=uniform,"
                "g=css,q=15,b=Y,r=4,d1=3.stim")

@@ -1,8 +1,10 @@
 import stim
 import numpy as np
 import re
+import os
+_PRX_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 
-D3_CLIFFORD = "/Users/ritesh/Downloads/prx/gidney-circuits/circuits/for_perfectionist_decoding/c=inject[unitary]+cultivate,p=0.001,noise=uniform,g=css,q=15,b=Y,r=4,d1=3.stim"
+D3_CLIFFORD = os.path.join(_PRX_ROOT, "gidney-circuits", "circuits", "for_perfectionist_decoding", "c=inject[unitary]+cultivate,p=0.001,noise=uniform,g=css,q=15,b=Y,r=4,d1=3.stim"
 
 def replace_s_with_t(s):
     """Replace S→T and S_DAG→T_DAG in a circuit string."""

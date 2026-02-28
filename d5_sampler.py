@@ -13,7 +13,7 @@ import re
 import time
 from math import ceil
 
-os.environ.setdefault("JAX_PLATFORMS", "cpu")
+os.environ.setdefault("JAX_PLATFORMS", "cuda")
 
 import numpy as np
 import jax

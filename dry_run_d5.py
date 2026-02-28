@@ -26,7 +26,7 @@ from tsim_cutting import find_stab_cutting, _plug_outputs, _find_zx_components, 
 # Load the d=5 circuit
 # ============================================================================
 
-CIRCUIT_PATH = Path("/Users/ritesh/Downloads/prx/gidney-circuits/circuits/"
+CIRCUIT_PATH = Path(os.path.join(_PRX_ROOT, "gidney-circuits", "circuits", ""
                     "for_perfectionist_decoding/"
                     "c=inject[unitary]+cultivate,p=0.001,noise=uniform,"
                     "g=css,q=42,b=Y,r=10,d1=5.stim")
@@ -199,6 +199,8 @@ for i, cc in enumerate(components_sorted):
     if n_subcomps >= 2:
         # Process each sub-component separately
         from tsim_cutting import _extract_subgraph
+import os
+_PRX_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
         f_indices_global = [int(p[1:]) for p in f_params]
         param_names = [f"f{i}" for i in f_indices_global]
         param_names += [f"m{output_indices[j]}" for j in range(n_outputs)]

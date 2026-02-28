@@ -1,7 +1,9 @@
 import stim
 import numpy as np
+import os
+_PRX_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 
-D3 = "/Users/ritesh/Downloads/prx/gidney-circuits/circuits/for_perfectionist_decoding/c=inject[unitary]+cultivate,p=0.001,noise=uniform,g=css,q=15,b=Y,r=4,d1=3.stim"
+D3 = os.path.join(_PRX_ROOT, "gidney-circuits", "circuits", "for_perfectionist_decoding", "c=inject[unitary]+cultivate,p=0.001,noise=uniform,g=css,q=15,b=Y,r=4,d1=3.stim"
 
 circuit = stim.Circuit(open(D3).read())
 

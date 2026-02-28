@@ -64,7 +64,7 @@ print("=" * 60)
 print("Step 1: Loading d=5 circuit")
 print("=" * 60)
 
-CIRCUIT_PATH = "/Users/ritesh/Downloads/prx/gidney-circuits/circuits/" \
+CIRCUIT_PATH = os.path.join(_PRX_ROOT, "gidney-circuits", "circuits", \
     "for_perfectionist_decoding/" \
     "c=inject[unitary]+cultivate,p=0.001,noise=uniform," \
     "g=css,q=42,b=Y,r=10,d1=5.stim"
@@ -229,6 +229,8 @@ for p in [0.001, 0.0015, 0.002, 0.0025, 0.003, 0.004, 0.005]:
     del s
 
 import json
+import os
+_PRX_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 with open(os.path.join(_THIS_DIR, "d5_ler_results.json"), "w") as f:
     json.dump(results, f, indent=2)
 print(f"\nResults saved to d5_ler_results.json")

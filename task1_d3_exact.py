@@ -7,6 +7,8 @@ import sys, os, re
 from pathlib import Path
 import numpy as np
 from collections import defaultdict
+import os
+_PRX_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 
 os.environ["JAX_PLATFORMS"] = "cpu"
 _THIS_DIR = Path(__file__).resolve().parent
@@ -203,7 +205,7 @@ def simulate_circuit(circ_lines, n_qubits, use_t_gates=True):
 # ============================================================================
 # Load d=3 circuit
 # ============================================================================
-CIRCUIT_PATH = Path("/Users/ritesh/Downloads/prx/gidney-circuits/circuits/"
+CIRCUIT_PATH = Path(os.path.join(_PRX_ROOT, "gidney-circuits", "circuits", ""
                     "for_perfectionist_decoding/"
                     "c=inject[unitary]+cultivate,p=0.001,noise=uniform,"
                     "g=css,q=15,b=Y,r=4,d1=3.stim")

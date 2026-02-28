@@ -4,15 +4,15 @@ import numpy as np
 import os
 os.environ["JAX_PLATFORMS"] = "cpu"
 
-sys.path.insert(0, '/Users/ritesh/Downloads/prx/accel-cutting-magic-state')
-sys.path.insert(0, '/Users/ritesh/Downloads/prx/tsim/src')
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(_PRX_ROOT, 'tsim', 'src'))
 
 import stim
 import tsim
 import pyzx_param as zx
 from tsim_cutting import find_stab_cutting
 
-D3_CLIFFORD = "/Users/ritesh/Downloads/prx/gidney-circuits/circuits/for_perfectionist_decoding/c=inject[unitary]+cultivate,p=0.001,noise=uniform,g=css,q=15,b=Y,r=4,d1=3.stim"
+D3_CLIFFORD = os.path.join(_PRX_ROOT, "gidney-circuits", "circuits", "for_perfectionist_decoding", "c=inject[unitary]+cultivate,p=0.001,noise=uniform,g=css,q=15,b=Y,r=4,d1=3.stim"
 with open(D3_CLIFFORD) as f:
     content = f.read()
 
@@ -46,6 +46,7 @@ try:
 except Exception as e:
     print(f"\nFailed to build noiseless circuit: {e}")
     import traceback
+_PRX_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
     traceback.print_exc()
     # Fall back to full circuit with noise
     print("\nFalling back to noisy circuit...")

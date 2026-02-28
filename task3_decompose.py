@@ -21,7 +21,7 @@ from stab_rank_cut import cut_spider, decompose
 # ============================================================================
 # Load d=3 circuit
 # ============================================================================
-D3_PATH = Path("/Users/ritesh/Downloads/prx/gidney-circuits/circuits/"
+D3_PATH = Path(os.path.join(_PRX_ROOT, "gidney-circuits", "circuits", ""
                "for_perfectionist_decoding/"
                "c=inject[unitary]+cultivate,p=0.001,noise=uniform,"
                "g=css,q=15,b=Y,r=4,d1=3.stim")
@@ -112,6 +112,8 @@ print("d=3: Sampling graph analysis")
 print(f"{'='*60}")
 
 from tsim.core.graph import prepare_graph, connected_components
+import os
+_PRX_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 
 d3_circuit2 = tsim.Circuit(d3_t_text)
 prepared = prepare_graph(d3_circuit2, sample_detectors=True)
@@ -157,7 +159,7 @@ print(f"\n{'='*60}")
 print("d=5: Circuit-level ZX analysis")
 print(f"{'='*60}")
 
-D5_PATH = Path("/Users/ritesh/Downloads/prx/gidney-circuits/circuits/"
+D5_PATH = Path(os.path.join(_PRX_ROOT, "gidney-circuits", "circuits", ""
                "for_perfectionist_decoding/"
                "c=inject[unitary]+cultivate,p=0.001,noise=uniform,"
                "g=css,q=42,b=Y,r=10,d1=5.stim")

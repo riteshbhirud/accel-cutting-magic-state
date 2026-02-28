@@ -22,7 +22,7 @@ import pyzx_param as zx
 from stab_rank_cut import tcount, is_t_like, can_cut, cut_spider
 
 # Load circuit
-CIRCUIT_PATH = Path("/Users/ritesh/Downloads/prx/gidney-circuits/circuits/"
+CIRCUIT_PATH = Path(os.path.join(_PRX_ROOT, "gidney-circuits", "circuits", ""
                     "for_perfectionist_decoding/"
                     "c=inject[unitary]+cultivate,p=0.001,noise=uniform,"
                     "g=css,q=42,b=Y,r=10,d1=5.stim")
@@ -49,6 +49,8 @@ def replace_s_with_t(s):
 noiseless_t_str = replace_s_with_t(noiseless_str)
 
 import tsim
+import os
+_PRX_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 circuit = tsim.Circuit(noiseless_t_str)
 raw_graph = circuit.get_graph()
 

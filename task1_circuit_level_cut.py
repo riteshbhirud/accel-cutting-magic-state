@@ -30,7 +30,7 @@ from stab_rank_cut import tcount, decompose, find_best_cut, cut_spider, can_cut
 # Step 1: Create noiseless d=5 circuit with T gates
 # ============================================================================
 
-CIRCUIT_PATH = Path("/Users/ritesh/Downloads/prx/gidney-circuits/circuits/"
+CIRCUIT_PATH = Path(os.path.join(_PRX_ROOT, "gidney-circuits", "circuits", ""
                     "for_perfectionist_decoding/"
                     "c=inject[unitary]+cultivate,p=0.001,noise=uniform,"
                     "g=css,q=42,b=Y,r=10,d1=5.stim")
@@ -128,6 +128,8 @@ print(f"  T-spiders cuttable: {t_cuttable}")
 
 # Check connectivity
 from tsim.core.graph import connected_components, ConnectedComponent
+import os
+_PRX_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 comps = connected_components(g)
 print(f"  Connected components: {len(comps)}")
 for i, cc in enumerate(comps):

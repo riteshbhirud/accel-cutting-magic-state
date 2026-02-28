@@ -23,7 +23,7 @@ import pyzx_param as zx
 from stab_rank_cut import tcount, can_cut, cut_spider, is_t_like
 
 # Load circuit
-CIRCUIT_PATH = Path("/Users/ritesh/Downloads/prx/gidney-circuits/circuits/"
+CIRCUIT_PATH = Path(os.path.join(_PRX_ROOT, "gidney-circuits", "circuits", ""
                     "for_perfectionist_decoding/"
                     "c=inject[unitary]+cultivate,p=0.001,noise=uniform,"
                     "g=css,q=42,b=Y,r=10,d1=5.stim")
@@ -58,6 +58,8 @@ zx.full_reduce(g, paramSafe=True)
 
 # Get main component
 from tsim.core.graph import connected_components
+import os
+_PRX_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 comps = connected_components(g)
 big_cc = max(comps, key=lambda c: len(list(c.graph.vertices())))
 g_main = big_cc.graph

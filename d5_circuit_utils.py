@@ -11,7 +11,9 @@ import numpy as np
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 
-CIRCUIT_DIR = "/Users/ritesh/Downloads/prx/gidney-circuits/circuits/for_perfectionist_decoding"
+_THIS_DIR = os.path.dirname(os.path.abspath(__file__))
+_DEFAULT_CIRCUIT_DIR = os.path.join(_THIS_DIR, '..', 'gidney-circuits', 'circuits', 'for_perfectionist_decoding')
+CIRCUIT_DIR = os.environ.get('D5_CIRCUIT_DIR', _DEFAULT_CIRCUIT_DIR)
 
 def get_d5_path(p):
     """Return path to Gidney d=5 circuit at noise level p."""
@@ -247,7 +249,7 @@ def validate_circuit_builders(content: str, n_shots: int = 10000) -> dict:
     Returns dict with validation results.
     """
     import sys
-    sys.path.insert(0, '/Users/ritesh/Downloads/prx/tsim/src')
+    sys.path.insert(0, os.path.join(_THIS_DIR, '..', 'tsim', 'src'))
     import tsim
     from tsim.core.graph import prepare_graph, connected_components
     from stab_rank_cut import tcount

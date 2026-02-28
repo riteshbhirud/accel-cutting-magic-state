@@ -12,9 +12,11 @@ import tsim
 import pyzx_param as zx
 from tsim.core.graph import prepare_graph, connected_components, get_params
 from stab_rank_cut import tcount
+import os
+_PRX_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 
 # Load and replace S→T
-CIRCUIT_PATH = Path("/Users/ritesh/Downloads/prx/gidney-circuits/circuits/"
+CIRCUIT_PATH = Path(os.path.join(_PRX_ROOT, "gidney-circuits", "circuits", ""
                     "for_perfectionist_decoding/"
                     "c=inject[unitary]+cultivate,p=0.001,noise=uniform,"
                     "g=css,q=42,b=Y,r=10,d1=5.stim")

@@ -20,7 +20,7 @@ import json
 import argparse
 from pathlib import Path
 
-os.environ.setdefault("JAX_PLATFORMS", "cpu")
+os.environ.setdefault("JAX_PLATFORMS", "cuda")
 
 import numpy as np
 import jax

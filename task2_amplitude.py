@@ -31,7 +31,7 @@ import stim
 # ============================================================================
 # Load and prepare d=5 circuit
 # ============================================================================
-CIRCUIT_PATH = Path("/Users/ritesh/Downloads/prx/gidney-circuits/circuits/"
+CIRCUIT_PATH = Path(os.path.join(_PRX_ROOT, "gidney-circuits", "circuits", ""
                     "for_perfectionist_decoding/"
                     "c=inject[unitary]+cultivate,p=0.001,noise=uniform,"
                     "g=css,q=42,b=Y,r=10,d1=5.stim")
@@ -385,7 +385,7 @@ print(f"{'='*60}")
 # For d=5 (42 qubits), we need the postselection approach
 
 # Load d=3 circuit
-D3_PATH = Path("/Users/ritesh/Downloads/prx/gidney-circuits/circuits/"
+D3_PATH = Path(os.path.join(_PRX_ROOT, "gidney-circuits", "circuits", ""
                "for_perfectionist_decoding/"
                "c=inject[unitary]+cultivate,p=0.001,noise=uniform,"
                "g=css,q=15,b=Y,r=4,d1=3.stim")
@@ -634,4 +634,6 @@ for v in d3_variants[:4]:  # First 4 variants
     except Exception as e:
         print(f"  {v['label']}: Error — {e}")
         import traceback
+import os
+_PRX_ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
         traceback.print_exc()
